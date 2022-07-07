@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,SafeAreaView,TextInput,Button,TouchableHighlight,TouchableOpacity,TouchableNativeFeedback  } from 'react-native';
+import { StyleSheet, Text, View,SafeAreaView,TextInput,Button,TouchableHighlight,TouchableOpacity,TouchableNativeFeedback,Image  } from 'react-native';
 
 
 
@@ -46,7 +46,10 @@ export default function App() {
         <Text style={{margin:30}}>Button</Text>
       </View>
     </TouchableNativeFeedback>
-
+    <Image 
+      style = {{height:100, width:100}}
+      source = {require('./assets/logo.png')}
+    />
     
 
     </SafeAreaView>
