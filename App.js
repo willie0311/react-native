@@ -5,8 +5,13 @@ import { StyleSheet, Text, View,SafeAreaView,TextInput,Button,TouchableHighlight
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.view01}>
+   <SafeAreaView style={styles.container}>
+   <Image 
+      style = {{height:100, width:100}}
+      source = {require('./assets/123.jpg')}
+      resizeMode = 'contain'
+    />
+      {/*<View style={styles.view01}>
         <Text style={styles.text01}>中彰投</Text>
       </View>
         <View style = {{height:100 , width:200 , borderWidth:1}}>
@@ -55,14 +60,14 @@ export default function App() {
     activeOpacity = {0.5}
     onPress = {() =>{console.log('TouchableOpacity')}} >
     <View>
-      <Text>Button</Text>
+      <Text></Text>
       <Image 
       style = {{height:100, width:100}}
       source = {require('./assets/logo.png')}
     />
     </View>
     
-  </TouchableOpacity>
+  </TouchableOpacity>*/}
     
 
     </SafeAreaView>
