@@ -40,11 +40,14 @@ export default function App() {
       
       <TouchableNativeFeedback
       onPress = {() =>{console.log('TouchableNativeFeedback')}}
-      background ={TouchableNativeFeedback.Ripple('gyay',true)}>
+      background ={TouchableNativeFeedback.Ripple('gray',true)}
+      hitSlop = {{top:10,left:10,bottom:10,right:10}}>
       <View style ={{backgroundColor:'blue'}}>
         <Text style={{margin:30}}>Button</Text>
       </View>
     </TouchableNativeFeedback>
+
+    
 
     </SafeAreaView>
 
