@@ -8,14 +8,21 @@ import React , {Component} from 'react';
 
 
 export default class App extends Component {
-  
+  constructor(props){
+    super(props);
+    this.state ={
+      value : false,
+    };
+  }
+
   render (){
     return (
       <View style = {styles.container}>
         <Text style = {{fontSize :25}}>Switch </Text>
         <Switch
           // disabled = {true} 
-          // value = {this.state.value}
+          value = {this.state.value}
+          onValueChange = {(data) => this.setState({ value: data})}
 
         />
       </View>
