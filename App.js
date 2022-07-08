@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,SafeAreaView,TextInput,Button,TouchableHighlight,TouchableOpacity,TouchableNativeFeedback,Image, ScrollView , FlatList ,SectionList ,Switch } from 'react-native';
+import { StyleSheet, Text, View,SafeAreaView,TextInput,Button,TouchableHighlight,TouchableOpacity,TouchableNativeFeedback,Image, ScrollView , FlatList ,SectionList ,Switch, Modal } from 'react-native';
 
 
 //增加npm
@@ -11,20 +11,27 @@ export default class App extends Component {
   constructor(props){
     super(props);
     this.state ={
-      value : false,
+      show : false,
     };
   }
 
   render (){
     return (
       <View style = {styles.container}>
-        <Text style = {{fontSize :25}}>Switch </Text>
-        <Switch
-          // disabled = {true} 
-          value = {this.state.value}
-          onValueChange = {(data) => this.setState({ value: data})}
-
-        />
+         <Button
+            title='Open'
+            onPress={() =>{this.setState({ show:true})}}/>
+          <Modal
+            animationType='fade'
+            visible = {this.state.show}
+            onPress = {() => {console.log ('modal show')}}>
+              <View style = {{flex: 1,alignItems: 'center',justifyContent: 'center',}}>
+                <Text style={{fontSize :30 }}>Modal</Text>
+                  <Button 
+                  title = "close"
+                  onPress={ () => {this.setState({show : false})}}/>
+              </View>
+            </Modal> 
       </View>
     );
   }
