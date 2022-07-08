@@ -1,13 +1,20 @@
-import { StyleSheet, Text, View,SafeAreaView,TextInput,Button,TouchableHighlight,TouchableOpacity,TouchableNativeFeedback,Image, ScrollView , FlatList ,SectionList ,Switch, Modal,Alert } from 'react-native';
+import { StyleSheet, Text, View,SafeAreaView,TextInput,Button,TouchableHighlight,TouchableOpacity,TouchableNativeFeedback,Image, ScrollView , FlatList ,SectionList ,Switch, Modal,Alert, Dimensions } from 'react-native';
 
 
-//增加npm
-import PropTypes from 'prop-types';
+let {height, width} = Dimensions.get('window');
+export default function App() {
+  return (
+    <View style={styles.container}>
+        <Image
+          style={{height: height * 0.2, width: width * 0.5}}
+          source={require('./assets/123.jpg')}
+        />
+    </View>
+  );
+}
 
-import React , {Component} from 'react';
 
-
-export default class App extends Component {
+{/*export default class App extends Component {
   constructor(props){
     super(props);
     this.state ={
@@ -35,7 +42,7 @@ export default class App extends Component {
       </View>
     );
   }
-}
+}*/}
 
 const styles = StyleSheet.create({
   container: {
