@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View,SafeAreaView,TextInput,Button,TouchableHighlight,TouchableOpacity,TouchableNativeFeedback,Image, ScrollView , FlatList ,SectionList  } from 'react-native';
 
 import { Component } from "react";
+//增加npm
+import PropTypes from 'prop-types';
 
 //自訂義hello
 class Hello extends Component {
@@ -14,13 +16,26 @@ class Hello extends Component {
       </View>
     )
   }
-} 
+}; 
+//增加type
+Hello.propTypes = {
+  title : PropTypes.string ,  //字串
+  name : PropTypes.string , //字串
+  id : PropTypes.number.isRequired // 數字 & 必填
+};
+//給預設值
+Hello.defaultProps = {
+  title: 'React Native',
+  name: 'Gavin',
+  id: 2022
+}
 
 export default function App() {
 
   return (
     <View style ={styles.container}>
-      <Hello title='World' name="User" id='20220708'/>
+      <Hello title='World' name="User" id={20220708}/> 
+      <Hello />
     </View>
   );
 }
