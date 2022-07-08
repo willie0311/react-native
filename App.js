@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,SafeAreaView,TextInput,Button,TouchableHighlight,TouchableOpacity,TouchableNativeFeedback,Image, ScrollView , FlatList ,SectionList ,Switch, Modal } from 'react-native';
+import { StyleSheet, Text, View,SafeAreaView,TextInput,Button,TouchableHighlight,TouchableOpacity,TouchableNativeFeedback,Image, ScrollView , FlatList ,SectionList ,Switch, Modal,Alert } from 'react-native';
 
 
 //增加npm
@@ -18,20 +18,20 @@ export default class App extends Component {
   render (){
     return (
       <View style = {styles.container}>
-         <Button
-            title='Open'
-            onPress={() =>{this.setState({ show:true})}}/>
-          <Modal
-            animationType='fade'
-            visible = {this.state.show}
-            onPress = {() => {console.log ('modal show')}}>
-              <View style = {{flex: 1,alignItems: 'center',justifyContent: 'center',}}>
-                <Text style={{fontSize :30 }}>Modal</Text>
-                  <Button 
-                  title = "close"
-                  onPress={ () => {this.setState({show : false})}}/>
-              </View>
-            </Modal> 
+        <Button
+          title='Alert'
+          onPress={() => {
+            Alert.alert(
+              'title',
+              'Hello React Native Alert',
+              [
+                { text : 'Cancel' , onPress : () => console.log('Cancel')},
+                { text : 'Yes' , onPress : () => console.log('Yes')},
+                { text : 'No' , onPress : () => console.log('No')},
+              ]
+            )
+          }} 
+        />
       </View>
     );
   }
