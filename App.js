@@ -1,32 +1,55 @@
-import { StyleSheet, Text, View,SafeAreaView,TextInput,Button,TouchableHighlight,TouchableOpacity,TouchableNativeFeedback,Image, ScrollView , FlatList  } from 'react-native';
-
-
-
+import { StyleSheet, Text, View,SafeAreaView,TextInput,Button,TouchableHighlight,TouchableOpacity,TouchableNativeFeedback,Image, ScrollView , FlatList ,SectionList  } from 'react-native';
 
 
 export default function App() {
-  let data01 = [
-    { key: '1' , data: 'React'},
-    { key: '2' , data: 'React Native'},
-    { key: '3' , data: 'JavaScript'}
+  var data01 = [
+    { title: 'Title1', data: ['item1','item2']},
+    { title: 'Title2', data: ['item3','item4']},
+    { title: 'Title3', data: ['item5','item6']},
   ];
   return (
-  <View style={styles.container}>
-    <View style = {{width: 300 , height: 400}}>
-      <FlatList
-        data = {data01} renderItem = {({item}) =>(
-          <View style = {{ marginTop: 20 , alignItems : 'center'}}>
-            <Text>{item.key}</Text>
-            <Text>{item.data}</Text>
-          </View>
-        )}
-        style = {{borderWidth:1}} containerContainerStyle = {{alignItems : 'center'}}
+    <View style={styles.container}>
+      <View style={{width: 300, height: 400}}>
+        <SectionList
+          renderItem={({ item, index, section}) => (
+            <Text key={index}>{item}</Text>
+          )}
+          renderSectionHeader={
+            ({section: {title} }) =>(
+              <View
+                style={{backgroundColor: 'black',
+                marginTop:20
+              }}>
+                <Text style={{ color: "white"}}>
+                {title}
+                </Text>
+              </View>
+            )}
+          sections={data01}
+          keyExtractor={(item, index) => item + index}  
         />
+        <SectionList
+          renderItem={({ item, index, section}) => (
+            <Text key={index}>{item}</Text>
+          )}
+          renderSectionHeader={
+            ({section: {title} }) =>(
+              <View
+                style={{backgroundColor: 'black',
+                marginTop:20
+              }}>
+                <Text style={{ color: "white"}}>
+                {title}
+                </Text>
+              </View>
+            )}
+          sections={data01}
+          keyExtractor={(item, index) => item + index}  
+        />
+      </View>
     </View>
-  </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
