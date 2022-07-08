@@ -6,7 +6,12 @@ import { Component } from "react";
 class Hello extends Component {
   render (){
     return (
-      <Text>Hello {this.props.title}</Text>
+      // 一個物件不用View 兩個以上需要View包起來 才能回傳
+      <View>
+        <Text>title {this.props.title}</Text>
+        <Text>name {this.props.name}</Text>
+        <Text>id {this.props.id}</Text>
+      </View>
     )
   }
 } 
@@ -15,8 +20,7 @@ export default function App() {
 
   return (
     <View style ={styles.container}>
-      <Hello title='World' />
-      <Hello title='React Native' />
+      <Hello title='World' name="User" id='20220708'/>
     </View>
   );
 }
