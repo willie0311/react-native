@@ -24,7 +24,14 @@ export default function App() {
         keyboardType={'numeric'}
         value={validCode}
         />
-        {getNumber()}
+        {getNumber}
+
+        {/*{validCode === '1234' ?<Text style={{color:'yellow'}}>輸入成功</Text> :<Text style={{color:'red'}}>密碼錯誤</Text>}*/}
+        {validCode.length === 4 ? (
+          validCode === '1234' ?
+          <Text style={{color:'yellow'}}>輸入成功</Text> :
+          <Text style={{color:'red'}}>密碼錯誤</Text>
+          ):<Text style={{color:'red'}}>請輸入密碼</Text>}
 
         <TouchableOpacity style={{backgroundColor:'#00aeef',borderRadius:20,width:300,height:40,justifyContent:'center',margin:20}}>
           <Text style={{color:'white',textAlign:'center',fontSize:25}}>
