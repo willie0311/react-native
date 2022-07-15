@@ -42,7 +42,7 @@ export default class App extends Component{
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     flex: 1,
     flexDirection: 'row'
   },
