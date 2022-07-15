@@ -23,6 +23,8 @@ export default function App() {
         onChangeText={(text) =>setValidCode(text)}
         keyboardType={'numeric'}
         value={validCode}
+        secureTextEntry={true}
+        autoFocus={true}
         />
         {getNumber}
 
