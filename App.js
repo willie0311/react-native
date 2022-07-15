@@ -1,68 +1,46 @@
 
-import { StyleSheet, Text, View, SafeAreaView, TextInput, Button, TouchableHighlight, TouchableOpacity,TouchableNativeFeedback,Image,ScrollView,FlatList,SectionList,Switch,Modal, Dimensions,Animated,Clipboard,} from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button,  TouchableOpacity} from 'react-native';
 
-import { Component } from 'react';
-import PropTypes from 'prop-types';
+import React , { useState } from 'react';
 
 
-{/*let {height, width} = Dimensions.get('window');
+
+
 export default function App() {
+  const [validCode , setValidCode] = useState('');
+  const getNumber = () =>{
+    if(validCode === '1234') {
+      return <Text style={{color:'yellow'}}>輸入成功</Text>;
+    }else {
+      return <Text style={{color:'red'}}>密碼錯誤</Text>;
+    }
+  }
   return (
     <View style={styles.container}>
-        <Image
-          style={{height: height * 0.2, width: width * 0.5}}
-          source={require('./ada.jpg')}
+        <TextInput
+        maxLength={4}
+        style={{height:50,width:300,borderRadius:0,borderColor:'darkgray',backgroundColor:'white',color:'black',fontSize:28,textAlign:'center'}}
+        onChangeText={(text) =>setValidCode(text)}
+        keyboardType={'numeric'}
+        value={validCode}
         />
+        {getNumber()}
+
+        <TouchableOpacity style={{backgroundColor:'#00aeef',borderRadius:20,width:300,height:40,justifyContent:'center',margin:20}}>
+          <Text style={{color:'white',textAlign:'center',fontSize:25}}>
+          Enter
+          </Text>
+        </TouchableOpacity>
     </View>
   );
-}*/}
-
-
-export default class App extends Component{
-  
-
-  render(){
-      return (
-        <View style={styles.container}>
-          <View style={styles.view}>
-            <Text style={{fontSize: 30}}>1</Text>
-          </View>
-          <View style={styles.view}>
-            <Text style={{fontSize: 30}}>2</Text>
-          </View>
-          <View style={styles.view}>
-            <Text style={{fontSize: 30}}>3</Text>
-          </View>
-        </View>
-      );
-  }
-  
 }
 
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
     flex: 1,
-    flexDirection: 'row'
+    backgroundColor:'black',
   },
-  view: {
-    height: 50,
-    width: 50,
-    margin: 10,
-    backgroundColor: 'gray',
-  },
-  view02: {
-    flex: 3,
-    backgroundColor: 'white',
-  },
-  view03: {
-    flex: 1,
-    backgroundColor: 'black',
-  },
-  text01: {
-    color: '#3f8',
-    textAlign: 'center',
-    fontSize: 20,
-  },
+  
 });
